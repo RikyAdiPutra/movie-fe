@@ -1,7 +1,12 @@
-import { Inter } from "next/font/google";
+import { Inter, Zilla_Slab } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const zilla = Zilla_Slab({
+  subsets: ["latin"],
+  variable: "--font-zilla",
+  weight: ["400", "500"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={` ${zilla.className}`}>{children}</body>
     </html>
   );
 }
